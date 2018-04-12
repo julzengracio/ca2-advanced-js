@@ -1,34 +1,31 @@
 import React from "react";
 import PlayerCard from './PlayerCard';
 
-class Profile extends React.Component {
+class Roster extends React.Component {
   constructor(props) {
-    super(props); 
+    super(props);
       this.state = {
         team: 'sas',
         players: [],
-        images: []
+        images: [],
+        roster: []
       }
 
       this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.addPlayer = this.addPlayer.bind(this);
   }
 
   handleChange(event) {
-    this.setState({team: event.target.value});
-  }
-
-  handleSubmit(event) {
     console.log(this.state.team);
-    event.preventDefault();
-    
+    this.setState({team: event.target.value});
+
     fetch(`https://nba-players.herokuapp.com/players-stats-teams/${this.state.team}`)
     .then(response => {
       if(response.ok) return response.json();
       throw new Error('Request failed.');
     })
     .then(data => {
-        console.log(data);       
+        //console.log(data);       
         this.setState({
           players: data
         });
@@ -45,7 +42,7 @@ class Profile extends React.Component {
       throw new Error('Request failed.');
     })
     .then(data => {
-        console.log(data);       
+        //console.log(data);       
         this.setState({
           players: data
         });
@@ -55,20 +52,39 @@ class Profile extends React.Component {
     });
   }
 
+  addPlayer(player) {
+    //console.log(player);
+    this.setState(prevState => ({
+      roster: prevState.roster.concat(player)
+    }));
+    console.log(this.state.roster);
+  }
+
   render() {
     let list = this.state.players.map( (u, i) => {
-      let fullname = u.name.split(' ');
-      let firstname = fullname[0];
-      let lastname = fullname[1];
-      return <PlayerCard key={i} fname={firstname} lname={lastname} src={`https://nba-players.herokuapp.com/players/${lastname}/${firstname}`}/>
+    let fullname = u.name.split(' ');
+    let firstname = fullname[0];
+    let lastname = fullname[1];
+    let salary = (u.points_per_game*100 + u.assists_per_game*100 + u.rebounds_per_game*100);
+    return <PlayerCard key={i} 
+                    fname={firstname} 
+                    lname={lastname}
+                    ppg={u.points_per_game}
+                    apg={u.assists_per_game}
+                    rpg={u.rebounds_per_game}
+                    sal={salary}
+                    src={`https://nba-players.herokuapp.com/players/${lastname}/${firstname}`}
+                    addPlayer={this.addPlayer}
+                    />
+            
     });
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <div className="form-group">
             <label>
-              Select a Team:
-              <select className="form-control" value={this.state.value} onChange={this.handleChange}>
+              <h3>Select a Team</h3>
+              <select className="form-control" value={this.state.value} onChange={this.handleChange} onClick={this.handleChange}>
                 <option value="sas">San Antionio Spurs</option>
                 <option value="bos">Boston Celtics</option>
                 <option value="lal">Los Angeles Lakers</option>
@@ -76,20 +92,34 @@ class Profile extends React.Component {
                 <option value="hou">Houston Rockets</option>
                 <option value="gsw">Golden State Warriors</option>
                 <option value="okc">Oklahoma City Thunder</option>
-                <option value="nop">New Orleans Pelicans</option>
+                <option value="nor">New Orleans Pelicans</option>
                 <option value="mil">Milwaukee Bucks</option>
                 <option value="den">Denver Nuggets</option>
               </select>
             </label>
-            <button type="submit" className="btn btn-primary mb-1">View Roster</button>
           </div>
         </form>
         <div className="row">
           {list}
+        </div>
+        <div className="row">
+          <FantasyList roster={this.state.roster}/>
         </div>
       </div>
     );
   }
 }
 
-export default Profile;
+class FantasyList extends React.Component {
+  render(){
+    return(
+      <ul>
+        {this.props.roster.map(item => (
+          <li key={item.id}>{item.firstName}</li>
+        ))}
+      </ul>
+    )
+  }
+}
+
+export default Roster;

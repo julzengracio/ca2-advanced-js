@@ -1,8 +1,10 @@
 import React from 'react';
 import { Route, NavLink, BrowserRouter } from 'react-router-dom';
 import Home from './Home';
-import Profile from './Profile';
+import Roster from './Roster';
 import Contact from './Contact';
+import Player from './Player';
+import FantasyRoster from './FantasyRoster';
 
 class Main extends React.Component {
   render () {
@@ -16,11 +18,14 @@ class Main extends React.Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
-                <li className="nav-item active">
+                <li className="nav-item">
                   <NavLink className="nav-link" exact to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                  <NavLink className="nav-link" to="/teamroster">Team Roster</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/fantasyroster">Fantasy Roster</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/contact">Contact</NavLink>
@@ -30,8 +35,10 @@ class Main extends React.Component {
           </nav>
           <div>
             <Route exact path="/" component={Home}/>
-            <Route path="/profile" component={Profile}/>
+            <Route path="/teamroster" component={Roster}/>
             <Route path="/contact" component={Contact}/>
+            <Route path="/fantasyroster" component={FantasyRoster}/>
+            <Route path="/player/:lname/:fname" component={Player}/>
           </div>
         </div>
       </BrowserRouter>
