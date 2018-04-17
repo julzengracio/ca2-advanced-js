@@ -14,3 +14,5 @@
 
 ## Wireframes
  ![Roster.js](./src/Assets/Wireframe1.jpg)
+ ![Player.js](./src/Assets/Wireframe2.jpg)
+ ![FantasyList](./src/Assets/Wireframe3.jpg)
