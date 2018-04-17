@@ -8,7 +8,7 @@ class Roster extends React.Component {
         team: 'sas',
         players: [],
         images: [],
-        roster: []
+        roster: [],
       }
 
       this.handleChange = this.handleChange.bind(this);
@@ -17,8 +17,10 @@ class Roster extends React.Component {
 
   handleChange(event) {
     console.log(this.state.team);
-    this.setState({team: event.target.value});
-
+    this.setState({
+      team: event.target.value
+    });
+    
     fetch(`https://nba-players.herokuapp.com/players-stats-teams/${this.state.team}`)
     .then(response => {
       if(response.ok) return response.json();
@@ -27,7 +29,7 @@ class Roster extends React.Component {
     .then(data => {
         //console.log(data);       
         this.setState({
-          players: data
+          players: data,
         });
     })
     .catch(error => {
@@ -42,7 +44,7 @@ class Roster extends React.Component {
       throw new Error('Request failed.');
     })
     .then(data => {
-        //console.log(data);       
+        console.log(data);       
         this.setState({
           players: data
         });
@@ -73,6 +75,7 @@ class Roster extends React.Component {
                     apg={u.assists_per_game}
                     rpg={u.rebounds_per_game}
                     sal={salary}
+                    teamName={u.team_name}
                     src={`https://nba-players.herokuapp.com/players/${lastname}/${firstname}`}
                     addPlayer={this.addPlayer}
                     />
@@ -80,6 +83,24 @@ class Roster extends React.Component {
     });
     return (
       <div className="container">
+        <div className="modal fade" id="fantasyRoster" tabIndex="-1" role="dialog" aria-labelledby="fantasyRosterLabel" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="fantasyRosterLabel">Fantasy Roster</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <FantasyList roster={this.state.roster}/>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <form>
           <div className="form-group">
             <label>
@@ -102,9 +123,6 @@ class Roster extends React.Component {
         <div className="row">
           {list}
         </div>
-        <div className="row">
-          <FantasyList roster={this.state.roster}/>
-        </div>
       </div>
     );
   }
@@ -113,11 +131,30 @@ class Roster extends React.Component {
 class FantasyList extends React.Component {
   render(){
     return(
-      <ul>
-        {this.props.roster.map(item => (
-          <li key={item.id}>{item.firstName}</li>
-        ))}
-      </ul>
+      <table className="table">
+        <thead className="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">PPG</th>
+              <th scope="col">APG</th>
+              <th scope="col">RPG</th>
+              <th scope="col">Value</th>
+              <th scope="col">Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.roster.map(item => (
+            <tr key={item.id}>
+            <td>{item.firstName} {item.lastName}</td>
+            <td>{item.ppg}</td>
+            <td>{item.apg}</td>
+            <td>{item.rpg}</td>
+            <td>${item.val}</td>
+            <td>{item.team}</td>
+            </tr>
+            ))}
+          </tbody>
+      </table>
     )
   }
 }

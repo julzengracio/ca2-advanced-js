@@ -19,10 +19,10 @@ class FullPlayerCard extends Component {
                         <table className="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">PPG</th>
-                                    <th scope="col">APG</th>
-                                    <th scope="col">RPG</th>
-                                    <th scope="col">BPG</th>
+                                    <th scope="col">Points Per Game</th>
+                                    <th scope="col">Assists Per Game</th>
+                                    <th scope="col">Rebounds Per Game</th>
+                                    <th scope="col">Blocks Per Game</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,6 +31,22 @@ class FullPlayerCard extends Component {
                                     <td>{this.props.apg}</td>
                                     <td>{this.props.rpg}</td>
                                     <td>{this.props.bpg}</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Field Goal %</th>
+                                    <th scope="col">Three Point %</th>
+                                    <th scope="col">Free Throw %</th>
+                                    <th scope="col">Player Efficiency Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{this.props.fgp}</td>
+                                    <td>{this.props.tpp}</td>
+                                    <td>{this.props.ftp}</td>
+                                    <td>{this.props.per}</td>
                                 </tr>
                             </tbody>
                         </table>

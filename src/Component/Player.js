@@ -45,6 +45,10 @@ class Player extends React.Component {
                     apg={this.state.player.assists_per_game}
                     rpg={this.state.player.rebounds_per_game}
                     bpg={this.state.player.blocks_per_game}
+                    fgp={this.state.player.field_goal_percentage}
+                    tpp={this.state.player.three_point_percentage}
+                    ftp={this.state.player.free_throw_percentage}
+                    per={this.state.player.player_efficiency_rating}
                     src={`https://nba-players.herokuapp.com/players/${this.state.lastname}/${this.state.firstname}`}/>
             </div> 
         )
