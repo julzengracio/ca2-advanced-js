@@ -16,9 +16,10 @@
  * BrowserRouters are used in the navigation menu. Clicking on a one of the menus will reroute the user to a different page. e.g. clicking on NBA Roster menu will navigate the user to `localhost:3000/nbaroster`.
  * The API used for this app is [NBA Player API](https://nba-players.herokuapp.com/)
  * Components created are found [here](./src/Component)
-  - [Main.js](./src/Component/Main.js) contains all the routers that was used for navigating around the app with the navigation menu.
-  - [Roster.js](./src/Component/Roster.js) contains the main body of the app. All players from the selected team (from the select box above the player cards) will be displayed on the browser. Selecting a team from the select box will automatically update the displayed rosters, which is done by an onChange event which will make the request for the rosters from the API everytime a new team is selected.
-  - [Playercard.js](./src/Component/PlayerCard.js) contains the data of each players that was gathered by the API request from [Roster.js](./src/Component/Roster.js). Each player card will have a 'View Player' and 'Add' buttons. Clicking on 'View Player' will reroute the user to `localhost:3000/player/firstName/lastName` which is the [Player.js](./src/Component/Player.js) component that will make a request from the API for the selected player. `firstName` and `lastName` are props that was passed from the [Playercard.js](./src/Component/PlayerCard.js) component.
+   - [Main.js](./src/Component/Main.js) contains all the routers that was used for navigating around the app with the navigation menu.
+   - [Roster.js](./src/Component/Roster.js) contains the main body of the app. All players from the selected team (from the select box above the player cards) will be displayed on the browser. Selecting a team from the select box will automatically update the displayed rosters, which is done by an onChange event which will make the request for the rosters from the API everytime a new team is selected.
+     - ![Teams](./src/Assets/Screenshot1.jpg "Select box containing the NBA Teams")
+   - [Playercard.js](./src/Component/PlayerCard.js) contains the data of each players that was gathered by the API request from [Roster.js](./src/Component/Roster.js). Each player card will have a 'View Player' and 'Add' buttons. Clicking on 'View Player' will reroute the user to `localhost:3000/player/firstName/lastName` which is the [Player.js](./src/Component/Player.js) component that will make a request from the API for the selected player. `firstName` and `lastName` are props that was passed from the [Playercard.js](./src/Component/PlayerCard.js) component.
 
 ## Wireframes
  ![Roster.js](./src/Assets/Wireframe1.jpg)
