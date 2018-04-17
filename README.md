@@ -13,4 +13,4 @@
  - Run `npm start` to run the app.
 
 ## Wireframes
-(/src/Assets/Wireframe1.jpg)
+ [Roster.js](./src/Assets/Wireframe1.jpg)
