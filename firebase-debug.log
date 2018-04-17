@@ -1,0 +1,75 @@
+[debug] [2018-04-17T15:10:56.578Z] ----------------------------------------------------------------------
+[debug] [2018-04-17T15:10:56.580Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase login
+[debug] [2018-04-17T15:10:56.581Z] CLI Version:   3.18.4
+[debug] [2018-04-17T15:10:56.581Z] Platform:      win32
+[debug] [2018-04-17T15:10:56.581Z] Node Version:  v6.11.0
+[debug] [2018-04-17T15:10:56.581Z] Time:          Tue Apr 17 2018 16:10:56 GMT+0100 (GMT Daylight Time)
+[debug] [2018-04-17T15:10:56.581Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=558843011&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2018-04-17T15:11:15.039Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ { code: '4/AAAf9c8ejdRYR05mXsLSir-iM_dElJKHOda5xCM5Z0xnui_rdR9oK_NZzr2ibY6Kf6HKIj95ak1QUfH4IJ23_3s',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  redirect_uri: 'http://localhost:9005',
+  grant_type: 'authorization_code' } 
+ Tue Apr 17 2018 16:11:15 GMT+0100 (GMT Daylight Time)
+[debug] [2018-04-17T15:11:36.055Z] Token Fetch Error: Error
+    at Error.FirebaseError (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\lib\error.js:11:16)
+    at Request._callback (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:35:11)
+    at self.callback (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:186:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:878:8)
+    at emitOne (events.js:96:13)
+    at ClientRequest.emit (events.js:188:7)
+    at TLSSocket.socketErrorListener (_http_client.js:309:9)
+    at emitOne (events.js:96:13)
+[debug] [2018-04-17T15:12:05.196Z] ----------------------------------------------------------------------
+[debug] [2018-04-17T15:12:05.198Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase login
+[debug] [2018-04-17T15:12:05.199Z] CLI Version:   3.18.4
+[debug] [2018-04-17T15:12:05.199Z] Platform:      win32
+[debug] [2018-04-17T15:12:05.199Z] Node Version:  v6.11.0
+[debug] [2018-04-17T15:12:05.200Z] Time:          Tue Apr 17 2018 16:12:05 GMT+0100 (GMT Daylight Time)
+[debug] [2018-04-17T15:12:05.200Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=156423066&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2018-04-17T15:12:10.897Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ { code: '4/AAD7ihLGl-oN54gIBhXAMKoBqWKKKRPMDbmZURWlsTI4YWZlXbuj55h0bgOPqYnMM8qVkkeXJFMp4pmjQL4gZEY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  redirect_uri: 'http://localhost:9005',
+  grant_type: 'authorization_code' } 
+ Tue Apr 17 2018 16:12:10 GMT+0100 (GMT Daylight Time)
+[debug] [2018-04-17T15:12:31.965Z] Token Fetch Error: Error
+    at Error.FirebaseError (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\lib\error.js:11:16)
+    at Request._callback (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:35:11)
+    at self.callback (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:186:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:878:8)
+    at emitOne (events.js:96:13)
+    at ClientRequest.emit (events.js:188:7)
+    at TLSSocket.socketErrorListener (_http_client.js:309:9)
+    at emitOne (events.js:96:13)
+[debug] [2018-04-17T15:13:35.721Z] ----------------------------------------------------------------------
+[debug] [2018-04-17T15:13:35.724Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\N00145647\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase login
+[debug] [2018-04-17T15:13:35.724Z] CLI Version:   3.18.4
+[debug] [2018-04-17T15:13:35.724Z] Platform:      win32
+[debug] [2018-04-17T15:13:35.724Z] Node Version:  v6.11.0
+[debug] [2018-04-17T15:13:35.725Z] Time:          Tue Apr 17 2018 16:13:35 GMT+0100 (GMT Daylight Time)
+[debug] [2018-04-17T15:13:35.725Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=415231773&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
