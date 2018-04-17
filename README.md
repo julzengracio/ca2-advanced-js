@@ -18,14 +18,14 @@
  * Components created are found [here](./src/Component)
    - [Main.js](./src/Component/Main.js) contains all the routers that was used for navigating around the app with the navigation menu.
    - [Roster.js](./src/Component/Roster.js) contains the main body of the app. All players from the selected team (from the select box above the player cards) will be displayed on the browser. Selecting a team from the select box will automatically update the displayed rosters, which is done by an onChange event which will make the request for the rosters from the API everytime a new team is selected.
-   ![Teams](./src/Assets/Screenshot1.jpg "Select box containing the NBA Teams")
+   - ![Teams](./src/Assets/Screenshot1.jpg "Select box containing the NBA Teams")
    - [Playercard.js](./src/Component/PlayerCard.js) contains the data of each players that was gathered by the API request from [Roster.js](./src/Component/Roster.js). Each player card will have a 'View Player' and 'Add' buttons. 
-   ![Player Card](./src/Assets/Screenshot2.jpg "Player Card showing the View Player and Add buttons")
+   - ![Player Card](./src/Assets/Screenshot2.jpg "Player Card showing the View Player and Add buttons")
    - Clicking on 'View Player' will reroute the user to `localhost:3000/player/firstName/lastName` which is a page for the selected player. This page is the [Player.js](./src/Component/Player.js) component that makes the request from the API for the selected player.
-   ![Player Page](./src/Assets/Screenshot3.jpg "Viewing a specific player") ![Router](./src/Assets/Screenshot4.jpg)
+   - ![Player Page](./src/Assets/Screenshot3.jpg "Viewing a specific player") ![Router](./src/Assets/Screenshot4.jpg)
    - `firstName` and `lastName` are props that was passed within the 'View Player' link from the [Playercard.js](./src/Component/PlayerCard.js) component.
    - Clicking on the 'Add' button will add the selected player in the Fantasy Roster list. This list can be viewed by clicking on the 'Fantasy Roster' button from the navigation menu.
-   ![Fantasy Roster](./src/Assetes/Screenshot5.jpg "Fantasy Roster list")
+   ![Fantasy Roster](./src/Assets/Screenshot5.jpg "Fantasy Roster list")
 
 ## Wireframes
  ![Roster.js](./src/Assets/Wireframe1.jpg)
