@@ -93,7 +93,7 @@ class Roster extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <FantasyList roster={this.state.roster}/>
+                <FantasyRosterList roster={this.state.roster}/>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -128,7 +128,7 @@ class Roster extends React.Component {
   }
 }
 
-class FantasyList extends React.Component {
+class FantasyRosterList extends React.Component {
   render(){
     return(
       <table className="table">
