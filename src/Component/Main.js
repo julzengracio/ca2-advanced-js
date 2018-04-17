@@ -21,7 +21,7 @@ class Main extends React.Component {
                   <NavLink className="nav-link" exact to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/teamroster">NBA Rosters</NavLink>
+                  <NavLink className="nav-link" to="/nbaroster">NBA Rosters</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/contact">Contact</NavLink>
@@ -36,7 +36,7 @@ class Main extends React.Component {
           </nav>
           <div>
             <Route exact path="/" component={Home}/>
-            <Route path="/teamroster" component={Roster}/>
+            <Route path="/nbaroster" component={Roster}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/player/:lname/:fname" component={Player}/>
           </div>
