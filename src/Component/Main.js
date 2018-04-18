@@ -11,7 +11,7 @@ class Main extends React.Component {
       <BrowserRouter>
         <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark container">
-            <NavLink className="navbar-brand" exact to="/">AdvanceJS</NavLink>
+            <NavLink className="navbar-brand" exact to="/">NBA Roster</NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -21,7 +21,7 @@ class Main extends React.Component {
                   <NavLink className="nav-link" exact to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/nbaroster">NBA Rosters</NavLink>
+                  <NavLink className="nav-link" to="/teamroster">Team Rosters</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/contact">Contact</NavLink>
@@ -36,7 +36,7 @@ class Main extends React.Component {
           </nav>
           <div>
             <Route exact path="/" component={Home}/>
-            <Route path="/nbaroster" component={Roster}/>
+            <Route path="/teamroster" component={Roster}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/player/:lname/:fname" component={Player}/>
           </div>

@@ -2,8 +2,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #95a5a6;
 }
 
 .addIcon {
   float: right;
+}
+
+.align-center {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.playerCard {
+  margin-bottom: 10px;
+}
+
+.backBtn {
+  margin: 15px;
 }

@@ -49,7 +49,7 @@ class PlayerCard extends Component {
     render(){
         return(
             <div className="col-sm">
-                <div className="card" style={{width: 18 + 'rem'}}>
+                <div className="card playerCard" style={{width: 18 + 'rem'}}>
                     <img className="card-img-top img-thumbnail" src={this.props.src} alt="Not available" style={{height: 216 + 'px'}}/>
                     <div className="card-body">
                         <h4 className="card-title">{this.props.fname} {this.props.lname}</h4>

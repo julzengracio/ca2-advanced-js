@@ -37,7 +37,7 @@ class Player extends React.Component {
     render() {
         return (
             <div className="container">
-                <button type="button" className="btn btn-outline-secondary" onClick={this.goBack}>Back</button>
+                <button type="button" className="btn btn-light backBtn" onClick={this.goBack}>Back</button>
                 <FullPlayerCard
                     name={this.state.player.name}
                     team={this.state.player.team_name}

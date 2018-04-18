@@ -44,7 +44,6 @@ class Roster extends React.Component {
       throw new Error('Request failed.');
     })
     .then(data => {
-        console.log(data);       
         this.setState({
           players: data
         });
@@ -55,11 +54,9 @@ class Roster extends React.Component {
   }
 
   addPlayer(player) {
-    //console.log(player);
     this.setState(prevState => ({
       roster: prevState.roster.concat(player)
     }));
-    console.log(this.state.roster);
   }
 
   render() {
@@ -84,7 +81,7 @@ class Roster extends React.Component {
     return (
       <div className="container">
         <div className="modal fade" id="fantasyRoster" tabIndex="-1" role="dialog" aria-labelledby="fantasyRosterLabel" aria-hidden="true">
-          <div className="modal-dialog" role="document">
+          <div className="modal-dialog modal-lg" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="fantasyRosterLabel">Fantasy Roster</h5>
